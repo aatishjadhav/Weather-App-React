@@ -6,12 +6,15 @@ import warm from "./assets/sun.gif";
 import ImageComponent from "./Components/ImageComponent";
 import MainCard from "./Components/MainCard";
 
+
+
+
 function App() {
   const [inputData, setInputData] = useState("");
   const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const apiKey = `7fb1a719f5dee274f030e858e5909cd0`;
+  const apiKey = process.env.REACT_APP_API_KEY;
   const apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${inputData}&units=metric&APPID=${apiKey}`;
   // const apiKey = `d5bbf8c46db7f8f692314b8e6700b9af`;
   // const apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${inputData}&units=metric&APPID=${apiKey}`;
